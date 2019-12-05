@@ -1,0 +1,43 @@
+.image-scroll-transition {
+	-webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+}
+
+.box-shadow {
+-webkit-box-shadow: 5px 5px 10px -5px rgba(0,0,0,1);
+-moz-box-shadow: 5px 5px 10px -5px rgba(0,0,0,1);
+box-shadow: 5px 5px 10px -5px rgba(0,0,0,1);
+}
+
+// Font Selections
+.heading-font() {
+	font-family: @headings-font-family;
+	font-weight: 800;
+}
+.body-font() {
+	font-family: @font-family-base;
+	font-weight: normal;
+}
+.footer-font() {
+	font-family: @headings-font-family;
+	font-weight: 950;
+}
+.btn-font() {
+    font-family: @headings-font-family;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+@media only screen and (max-width : 768px) {
+   .heading-font() { font-weight: 600; }
+.footer-font() { font-weight: 750; }
+.btn-font() { font-weight: 600; } 
+}
+
+.transition-all() {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.center-text { text-align: center; }

@@ -1,0 +1,550 @@
+@import "bootstrap/bootstrap.less";
+@import "font-awesome/font-awesome.less";
+
+@import "variables.less";
+@import "mixins.less";
+
+
+// @font-face {
+//     .mossyfont;
+// }
+
+// ===============================================================
+// ||                    Global Components                      ||
+// ===============================================================
+body{
+    margin: 0 auto;
+    padding-top: 70px;
+    width: 100%;
+    .body-font;
+    // background-color: green;
+}
+@media only screen and (max-width : 768px) {
+    body { font-size: @font-size-base /1.2; }
+    h1 { font-size: @font-size-h1 /1.5; }
+    h2 { font-size: @font-size-h2 /1.5; }
+    h3 { font-size: @font-size-h3 /1.5; }
+    h4 { font-size: @font-size-h4 /1.5; }
+    h5 { font-size: @font-size-h5 /1.5; }
+    h6 { font-size: @font-size-h6 /1.5; }
+}
+p {
+    line-height: 1.5;
+    // .body-font;
+    // margin: 30px 0;
+    // a {
+        // text-decoration: underline;
+    // }
+}
+h1, h2, h3, h4, h5, h6 { 
+    .heading-font;
+    margin: 0; 
+}
+.btn { .btn-font; }
+.pager { margin: 20px 0 0; }
+blockquote { color: @gray; font-style: italic; }
+.main {
+    h1, h2 { padding-bottom: 10px; .center-text; }
+}
+// hr.small {
+//     max-width: 100px;
+//     margin: 15px auto;
+//     border-width: 4px;
+//     border-color: blue;
+// }
+.navbar-collapse.in {
+overflow: hidden;
+}
+
+// ===============================================================
+// ||                          NAVBAR                           ||
+// ===============================================================
+.navbar-fixed-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    padding: 10px 0;
+    .nav {
+        li {
+            a {
+                font-weight: 500;
+                letter-spacing: 1px;
+            }
+        }
+    }
+// Navbar
+// .navbar-brand {
+//     font-family: @headings-font-family;
+//     text-transform: uppercase;
+//     font-weight: 800;
+// }
+}
+
+// Navbar
+// MIGHT NOT NEED THIS!!!!!!!!!!
+@media only screen and (min-width: 768px) {
+        border-bottom: 1px solid transparent;
+    .navbar-fixed-top {
+        padding: 5px 0;
+        .navbar-nav {
+            font-size: @font-size-large;
+        }
+       .navbar-brand {
+        font-size: @font-size-large *1.5;
+       }
+        
+    }
+}
+
+// ===============================================================
+// ||                    IMAGE NAVBAR                           ||
+// ===============================================================
+.img-nav {
+    display: block;
+    padding-top: 5%;
+    // background-color: blue;
+    ul { 
+        display:table; margin:0 auto;
+        li {
+            display:table-cell; padding: 0;
+            img {
+                width: 100%;
+                max-height: 235px;
+            }
+        }
+    }
+    .tooltip { 
+        margin-top: -11%; 
+        .heading-font;
+        font-size: 3vw;
+    }
+    h1 { .center-text; font-size: 9vw; }
+    p { .center-text; margin: 0; font-size: 3vw; }
+    .brand-name {
+        padding-bottom: 70px;
+    }
+}
+
+@media only screen and (min-width : 768px) {
+    .img-nav {
+        .tooltip { margin-top: -9%; font-size: 2vw;}
+        h1 { font-size: 80px; }
+        p { font-size: 25px } 
+    }
+}
+
+// ===============================================================
+// ||                       CONTACT FORM                        ||
+// ===============================================================
+.contact-form {
+    padding: 10px 10px 20px 10px;
+    // background-color: yellow;
+    .row {
+        margin-bottom: 10px;
+    }
+    // h1, h2 { padding-bottom: 10px; .center-text; }
+    .control-label {
+        .body-font;
+        text-align: left;
+    }
+    .form-control {
+        .heading-font;
+    }
+}
+
+
+// ===============================================================
+// ||                          FOOTER                           ||
+// ===============================================================
+footer {
+        .footer-font;
+        margin: 10px 0 10px 0;
+        padding: 0 0 0 0;        
+        .center-text;
+    }
+@media only screen and (min-width : 768px) {
+    footer {
+        .footer_steph {
+            float: left;
+            text-align: left;
+        }
+        .footer_lauren {
+            float: right;
+            text-align: right;
+        }
+    }
+}
+
+.error-wrap {
+    padding-top: 50px; 
+    padding-bottom: 50px;
+    .center-text;
+    .btn {
+        margin-top: 40px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+// ===============================================================
+// ||                       IMAGE SLIDER                        ||
+// ===============================================================
+
+.ba-slider {
+    position: relative;
+    overflow: hidden;
+    margin: 15px 0;
+}
+ 
+.ba-slider img {
+    width: 100%;
+    display:block;
+}
+ 
+.resize {
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+}
+
+
+.handle { /* Thin line seperator */
+  position:absolute; 
+  left:50%;
+  top:0;
+  bottom:0;
+  width:4px;
+  margin-left:-2px;
+ 
+  background: rgba(0,0,0,.5);
+  cursor: ew-resize;
+}
+ 
+.handle:after {  /* Big orange knob  */
+    position: absolute;
+    top: 50%;
+    width: 64px;
+    height: 64px;
+    margin: -32px 0 0 -32px;
+ 
+    content:'\21d4';
+    color:white;
+    font-weight:bold;
+    font-size:36px;
+    text-align:center;
+    line-height:64px;
+ 
+    background: #ffb800; /* @orange */
+    border:1px solid #e6a600; /* darken(@orange, 5%) */
+    border-radius: 50%;
+    .image-scroll-transition;
+    box-shadow:
+      0 2px 6px rgba(0,0,0,.3), 
+      inset 0 2px 0 rgba(255,255,255,.5),
+      inset 0 60px 50px -30px #ffd466; /* lighten(@orange, 20%)*/ 
+}
+
+.draggable:after {
+    width: 48px;
+    height: 48px;
+    margin: -24px 0 0 -24px;
+    line-height:48px;
+    font-size:30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ===============================================================
+// ||      STUFF I DON'T KNOW IF I NEED!!!!!!!!!!!!!!!!!        ||
+// ===============================================================
+
+
+// ===============================================================
+// ||                           BLOG                            ||
+// ===============================================================
+// BLOG PAGE & POSTS PAGES
+// a img {
+//     &:hover,
+//     &:focus {
+//         cursor: zoom-in;
+//     }
+// }
+// Header
+.intro-header {
+    // background-color: @body-bg; 
+    // background: no-repeat center center; 
+    // background-attachment: scroll;
+    // .background-cover;
+    // NOTE: Background images are set within the HTML using inline CSS!
+    margin-bottom: 10px;
+    .site-heading,
+    .post-heading,
+    .page-heading {
+        // padding: 100px 0 50px;
+        // color: white;
+        @media only screen and (min-width: 768px) {
+            // padding: 150px 0;
+        }
+    }
+    .site-heading,
+    .page-heading {
+        .center-text;
+        h1 {
+            margin-top: 0;
+            // font-size: 50px;
+        }
+        .subheading {
+            // font-size: 24px;
+            line-height: 1.1;
+            display: block;
+            // .sans-serif;
+            font-weight: 300;
+            margin: 10px 0 0;
+        }
+        @media only screen and (min-width: 768px) {
+            // h1 {
+            //     font-size: 80px;
+            // }
+        }
+    }
+    .post-heading {
+        // h1 {
+        //     font-size: 35px;
+        // }
+        .subheading,
+        .meta {
+            line-height: 1.1;
+            display: block;
+        }
+        .subheading {
+            // .sans-serif;
+            // font-size: 24px;
+            margin: 10px 0 30px;
+            font-weight: 600;
+        }
+        .meta {
+            // .serif;
+            font-style: italic;
+            font-weight: 300;
+            // font-size: 20px;
+            // a {
+                // color: white;
+            // }
+        }
+        @media only screen and (min-width: 768px) {
+            h1 {
+                font-size: 55px;
+            }
+            .subheading {
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+
+
+
+.site-heading { .center-text; }
+
+// Post Preview Pages
+
+.post-preview {
+    > a {
+        // color: @gray-dark;
+        &:hover,
+        &:focus {
+            text-decoration: none;
+            // color: @brand-primary;
+        }
+        > .post-title {
+            // font-size: 30px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        > .post-subtitle {
+            margin: 0;
+            // font-weight: 300;
+            margin-bottom: 10px;
+            .body-font;
+        }
+    }
+    > .post-meta {
+        // color: @gray;
+        // font-size: 18px;
+        font-style: italic;
+        margin-top: 0;
+        > a {
+            text-decoration: none;
+            // color: @gray-dark;
+            &:hover,
+            &:focus {
+                // color: @brand-primary;
+                text-decoration: underline;
+            }
+        }
+    }
+    @media only screen and (min-width: 768px) {
+        > a {
+            > .post-title {
+                // font-size: 36px;
+            }
+        }
+    }
+}
+
+// Sections
+
+.section-heading {
+    font-size: 36px;
+    margin-top: 60px;
+    font-weight: 700;
+}
+
+.caption {
+    .center-text;
+    // font-size: 14px;
+    padding: 10px;
+    font-style: italic;
+    margin: 0;
+    display: block;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+
+article img { margin: 0 auto;}
+
+
+
+
+
+
+
+
+
+
+
+// ===============================================================
+// ||                         CAROUSEL                          ||
+// ===============================================================
+// MIGHT NOT NEED!!!!!!!!!!!!!!!!!!!!!!!
+// .carousel-control {
+//     .glyphicon { color: blue;
+//         background-color: yellow;
+//     }
+//     i {
+//         color: black;
+//     }
+// }
+
+.carousel-holder {
+    .slide-image {
+        width: 100%;
+    }
+
+    .carousel-holder {
+        margin-bottom: 30px;
+    }
+
+    .carousel-control,
+    .item {
+        border-radius: 4px;
+    }
+
+    .caption {
+        height: 130px;
+        overflow: hidden;
+    }
+
+    .caption h4 {
+        white-space: nowrap;
+    }
+
+    .thumbnail img {
+        width: 100%;
+    }
+
+    .ratings {
+        padding-right: 10px;
+        padding-left: 10px;
+        color: #d17581;
+    }
+
+    .thumbnail {
+        padding: 0;
+    }
+
+    .thumbnail .caption-full {
+        padding: 9px;
+        color: #333;
+    }
+}
+
+
+
+
+// .portfolio-item {
+//     margin-bottom: 25px;
+// }
+
+
+// ===============================================================
+// ||                       Video & Film                        ||
+// ===============================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Extra Small Devices, Phones */ 
+// @media only screen and (min-width : 768px) {
+// }
+//  @media only screen and (min-width: 992px) {
+// }
